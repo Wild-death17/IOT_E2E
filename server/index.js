@@ -17,6 +17,11 @@ dotenv.config();
 
 //------------------------------------------------
 
+const esp = require('./routes/esp')
+app.use('/esp', esp);
+
+//------------------------------------------------
+
 app.listen(port, () => {
     console.log(`Now listening on port ${port}`);
     console.log(`http://localhost:${port}`);
