@@ -13,6 +13,6 @@
     "mysql2": "^3.11.5"
   },
   "scripts": {
-    "start": "index.js"
+    "start": "nodemon index.js"
   }
 }

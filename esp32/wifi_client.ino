@@ -22,7 +22,7 @@ void WiFi_SETUP()
 void SEND_DATA()
 {
     HTTPClient http;
-    http.begin(client, "http://10.9.0.164:6060/esp");
+    http.begin(client, "http://10.9.0.171:3214/esp");
     int httpCode = http.GET();
     if (httpCode == HTTP_CODE_OK)
     {
