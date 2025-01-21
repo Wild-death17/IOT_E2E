@@ -6,10 +6,13 @@
 #define RIGHT 17
 #define LIGHT 36
 #define TEMP 16
- #define DHTTYPE DHT11  
+#define Moisture 36
+#define DHTTYPE DHT11 
+#define ADMIN "http://10.9.2.107"
+#define PORT 3214 
 //-----------------------------------
-int PumpState = OFF;
-DHT dht(TEMP,DHTTYPE); 
+  int PumpState = OFF;
+  DHT dht(TEMP,DHTTYPE); 
 //-----------------------------------
 
 void setup()
@@ -21,10 +24,8 @@ void setup()
 }
 void loop()
 {
-  // SEND_DATA();
+  SEND_DATA( HandleTemp(), HandleLight(), HandleMoisture() );
   HandleWaterPump(PumpState);
-  HandleLight();
-  HandleTemp();
   delay(1000);
 }
 //-----------------------------------

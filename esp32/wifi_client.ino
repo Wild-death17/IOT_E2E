@@ -20,15 +20,17 @@ void WiFi_SETUP()
     Serial.println("Wifi conected");
 }
 
-void SEND_DATA()
+void SEND_DATA(float temp, int light, int moisture)
 {
     HTTPClient http;
-    http.begin(client, "http://10.9.0.171:3214/esp");
+    String dataURL = "temp=" + String(temp);
+    dataURL += "&light=" + String(light);
+    dataURL += "&moisture=" + String(moisture);
+    http.begin(client, String(ADMIN) + ":" + String(PORT) + "/esp?" + dataURL);
     int httpCode = http.GET();
-    // if (httpCode == HTTP_CODE_OK)
-    // {
-    //     Serial.print("HTTP response code ");
-    //     Serial.print(httpCode);
-    // }
+    if (httpCode == HTTP_CODE_OK)
+    {
+        Serial.print("HTTP respond ");
+    }
     http.end();
 }
