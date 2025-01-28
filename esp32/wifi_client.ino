@@ -27,10 +27,19 @@ void SEND_DATA(float temp, int light, int moisture)
     dataURL += "&light=" + String(light);
     dataURL += "&moisture=" + String(moisture);
     http.begin(client, String(ADMIN) + ":" + String(PORT) + "/esp?" + dataURL);
+    http.end();
+}
+int GET_STATE(){
+    HTTPClient http;
+    int ret = -1;
+    http.begin(client, String(ADMIN) + ":" + String(PORT) + "/esp/state");
     int httpCode = http.GET();
     if (httpCode == HTTP_CODE_OK)
     {
-        Serial.print("HTTP respond ");
+        Serial.print("HTTP respond: ");
+        String res = http.getString();
+        ret = res.toInt();
     }
     http.end();
+    return ret;
 }
