@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router();
 const fs = require('fs');
+const router = express.Router();
 
 router.get('/', (req, res) => {
-
+    let { temp, light, moisture } = req.query;
 })
 router.get('/state', (req, res) => {
     let data = JSON.parse(fs.readFileSync("state.json", "utf8"))
