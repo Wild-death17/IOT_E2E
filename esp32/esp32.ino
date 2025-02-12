@@ -10,11 +10,9 @@
 #define LEFT 16
 #define RIGHT 17
 //--SensorPin------------------------
-#define LIGHT 36
 #define TEMP 16
 #define MOISTURE 36
 //--StateModes-----------------------
-#define LIGHT_MODE 60
 #define TEMP_MODE 61
 #define MOISTURE_MODE 62
 #define SHABAT_MODE 63

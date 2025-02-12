@@ -1,7 +1,3 @@
-//--Library--------------------------
-
-//--Config---------------------------
-
 //-----------------------------------
 void WiFi_SETUP() {
   WiFi.begin(SSID);
@@ -12,10 +8,9 @@ void WiFi_SETUP() {
   Serial.println("");
   Serial.println("Wifi conected");
 }
-void SEND_DATA(float temp, int light, int moisture) {
+void SEND_DATA(float temp, int moisture) {
   HTTPClient http;
   String dataURL = "temp=" + String(temp);
-  dataURL += "&light=" + String(light);
   dataURL += "&moisture=" + String(moisture);
   http.begin(client, String(ADMIN) + ":" + String(PORT) + "/esp?" + dataURL);
   http.end();

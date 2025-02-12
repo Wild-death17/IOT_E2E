@@ -7,11 +7,6 @@ void StateSetup() {
 void HandleState() {
   switch (state) {
 
-    case LIGHT_MODE:
-      GET_DATA("lightMode");
-
-      break;
-
     case TEMP_MODE:
       GET_DATA("tempMode");
 
