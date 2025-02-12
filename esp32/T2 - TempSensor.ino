@@ -1,10 +1,10 @@
 //-----------------------------------
-void TempSetup(){
-  	dht.begin(); 
+void TempSetup() {
+  dht.begin();
 }
-float HandleTemp(){
+float HandleTemp() {
   float Humidity = dht.readHumidity();
-  float Temp = dht.readTemperature(); 
+  float Temp = dht.readTemperature();
   Serial.print("Temp: ");
   Serial.println(Temp);
 
