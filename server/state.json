@@ -1,14 +1,13 @@
 {
   "state": "64",
-
   "tempMode": {
     "temp": "",
     "minTime": "",
     "maxTime": ""
   },
   "moistureMode": {
-    "moisture": "",
-    "minTime": "",
-    "maxTime": ""
-  }
+    "moisture": ""
+  },
+  "shabbatMode": {},
+  "menualMode": {}
 }
