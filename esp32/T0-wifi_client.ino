@@ -10,6 +10,7 @@ void WiFi_SETUP()
   Serial.println("");
   Serial.println("Wifi conected");
 }
+//-----------------------------------
 void SEND_DATA(float temp, int moisture)
 {
   HTTPClient http;
@@ -33,6 +34,7 @@ int GET_STATE()
   http.end();
   return ret;
 }
+//-----------------------------------
 String GET_DATA(String state)
 {
   HTTPClient http;
@@ -49,3 +51,4 @@ String GET_DATA(String state)
   http.end();
   return res;
 }
+//-----------------------------------
