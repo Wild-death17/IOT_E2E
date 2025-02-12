@@ -1,10 +1,6 @@
 {
   "state": "64",
-  "lightMode": {
-    "light": "",
-    "minTime": "",
-    "maxTime": ""
-  },
+
   "tempMode": {
     "temp": "",
     "minTime": "",
