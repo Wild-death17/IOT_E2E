@@ -1,29 +1,44 @@
 //-----------------------------------
-
 void StateSetup() {
   prevStateCheckTimeStamp = millis();
 }
 //-----------------------------------
 void HandleState() {
+  String json;
+  JsonDocument doc;
+
   switch (state) {
-
     case TEMP_MODE:
-      GET_DATA("tempMode");
-
-      break;
+      {
+        json = GetData("tempMode");
+        deserializeJson(doc, json);
+        float temp = doc["temp"];
+        int minTime = doc["minTime"];
+        int maxTime = doc["maxTime"];
+        break;
+      }
 
     case MOISTURE_MODE:
-      GET_DATA("moistureMode");
+      {
+        json = GetData("moistureMode");
+        deserializeJson(doc, json);
+        int moisture = doc["moisture"];
+        break;
+      }
 
-      break;
     case SHABAT_MODE:
-      GET_DATA("shabbatMode");
+      {
+        json = GetData("shabbatMode");
+        deserializeJson(doc, json);
+        break;
+      }
 
-      break;
     case MANUAL_MODE:
-      GET_DATA("manualMode");
-
-      break;
+      {
+        json = GetData("manualMode");
+        deserializeJson(doc, json);
+        break;
+      }
   }
 }
 //-----------------------------------
