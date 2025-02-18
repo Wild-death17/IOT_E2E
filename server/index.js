@@ -20,6 +20,9 @@ dotenv.config();
 const esp = require('./routes/espRoute')
 app.use('/esp', esp);
 
+const tree = require('./routes/treeRoute')
+app.use('/tree', tree);
+
 //------------------------------------------------
 
 app.listen(port, () => {
