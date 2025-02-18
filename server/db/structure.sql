@@ -1,11 +1,4 @@
-CREATE TABLE IF NOT EXISTS `dataSensors` (
-	`id` int AUTO_INCREMENT NOT NULL UNIQUE,
-	`id_trees` int NOT NULL,
-	`id_sensors` int NOT NULL,
-	`avg` double NOT NULL,
-	`date` date NOT NULL,
-	PRIMARY KEY (`id`)
-);
+
 
 CREATE TABLE IF NOT EXISTS `Sensors` (
 	`id` int AUTO_INCREMENT NOT NULL UNIQUE,
