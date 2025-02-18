@@ -6,9 +6,7 @@
 #include <ArduinoJson.h>
 #define DHTTYPE DHT11
 //--WaterPump------------------------
-#define OFF 0
-#define LEFT 16
-#define RIGHT 17
+#define PUMP 16
 //--SensorPin------------------------
 #define TEMP 16
 #define MOISTURE 36
@@ -26,10 +24,10 @@
 DHT dht(TEMP, DHTTYPE);
 WiFiClient client;
 JsonDocument json;
-int pumpState = OFF;
 int state = MANUAL_MODE;
 unsigned long prevStateCheckTimeStamp;
 int stateDelayMinutes = 1000 * 60 * 1;
+
 //--setup----------------------------
 void setup() {
   Serial.begin(115200);
