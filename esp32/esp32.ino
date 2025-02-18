@@ -27,22 +27,4 @@ JsonDocument json;
 int state = MANUAL_MODE;
 unsigned long prevStateCheckTimeStamp;
 int stateDelayMinutes = 1000 * 60 * 1;
-
-//--setup----------------------------
-void setup() {
-  Serial.begin(115200);
-  WiFi_SETUP();
-  WaterPumpSetup();
-  TempSetup();
-  StateSetup();
-}
-//--loop-----------------------------
-void loop() {
-  if (millis() - prevStateCheckTimeStamp >= stateDelayMinutes) {
-    prevStateCheckTimeStamp = millis();
-    state = GET_STATE();
-  }
-  HandleState();
-  delay(10000);
-}
 //-----------------------------------
