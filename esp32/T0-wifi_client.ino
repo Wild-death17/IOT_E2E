@@ -29,6 +29,19 @@ int GetState() {
   http.end();
   return ret;
 }
+String GetTime(){
+    HTTPClient http;
+  String res = "";
+  http.begin(client, String(ADMIN) + ":" + String(PORT) + "/esp/currentTime");
+  int httpCode = http.GET();
+  if (httpCode == HTTP_CODE_OK) {
+    Serial.print("HTTP respond: ");
+    String res = http.getString();
+    Serial.println(res);
+  }
+  http.end();
+  return res;
+}
 String GetData(String state) {
   HTTPClient http;
   String res = "";
