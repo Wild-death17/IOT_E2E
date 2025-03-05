@@ -1,5 +1,5 @@
 {
-  "state": "64",
+  "state": "",
   "tempMode": {
     "temp": "",
     "minTime": "",
@@ -8,6 +8,12 @@
   "moistureMode": {
     "moisture": ""
   },
-  "shabbatMode": {},
-  "menualMode": {}
+  "shabbatMode": {
+    "duration": "",
+    "first": "",
+    "second": ""
+  },
+  "menualMode": {
+    "command": ""
+  }
 }
