@@ -11,6 +11,7 @@ void loop() {
   if (millis() - prevStateCheckTimeStamp >= stateDelayMinutes) {
     prevStateCheckTimeStamp = millis();
     state = GetState();
+    timeOfDay = GetTimeOfDay();
   }
   HandleState();
 }

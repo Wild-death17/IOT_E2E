@@ -9,11 +9,12 @@
 #define PUMP 16
 //--SensorPin------------------------
 #define TEMP 16
+#define LIGHT 16
 #define MOISTURE 36
 //--StateModes-----------------------
 #define TEMP_MODE 61
 #define MOISTURE_MODE 62
-#define SHABAT_MODE 63
+#define SHABBAT_MODE 63
 #define MANUAL_MODE 64
 //--Config---------------------------
 #define ADMIN "http://10.9.2.118"
@@ -24,7 +25,7 @@
 DHT dht(TEMP, DHTTYPE);
 WiFiClient client;
 JsonDocument json;
-int state = MANUAL_MODE;
+String timeOfDay = "";
 unsigned long prevStateCheckTimeStamp;
 int stateDelayMinutes = 1000 * 60 * 1;
 //-----------------------------------

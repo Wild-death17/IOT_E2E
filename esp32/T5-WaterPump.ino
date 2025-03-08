@@ -4,6 +4,6 @@ void WaterPumpSetup() {
 }
 //-----------------------------------
 void ToggleWaterPump() {
-      digitalWrite(PUMP, !digitalRead(PUMP));
+  digitalWrite(PUMP, !digitalRead(PUMP));
 }
 //-----------------------------------
