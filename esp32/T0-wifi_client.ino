@@ -22,38 +22,33 @@ int GetState() {
   http.begin(client, String(ADMIN) + ":" + String(PORT) + "/esp/state");
   int httpCode = http.GET();
   if (httpCode == HTTP_CODE_OK) {
-    Serial.print("HTTP respond: ");
     String res = http.getString();
     ret = res.toInt();
   }
   http.end();
   return ret;
 }
-String GetTime(){
-    HTTPClient http;
-  String res = "";
+String GetTimeOfDay() {
+  HTTPClient http;
+  String ret = "";
   http.begin(client, String(ADMIN) + ":" + String(PORT) + "/esp/currentTime");
   int httpCode = http.GET();
   if (httpCode == HTTP_CODE_OK) {
-    Serial.print("HTTP respond: ");
-    String res = http.getString();
-    Serial.println(res);
+    ret = http.getString();
   }
   http.end();
-  return res;
+  return ret;
 }
 String GetData(String state) {
   HTTPClient http;
-  String res = "";
+  String ret = "";
   String currentState = "state=" + state;
   http.begin(client, String(ADMIN) + ":" + String(PORT) + "/esp/dataMode?" + currentState);
   int httpCode = http.GET();
   if (httpCode == HTTP_CODE_OK) {
-    Serial.print("HTTP respond: ");
-    String res = http.getString();
-    Serial.println(res);
+    ret = http.getString();
   }
   http.end();
-  return res;
+  return ret;
 }
 //-----------------------------------
